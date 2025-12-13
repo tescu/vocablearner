@@ -1,5 +1,21 @@
 #!/usr/bin/env lua
+-- Dictgame
+-- TODO (in order of importance):
+-- * choose language at runtime
+-- * option between typing the word or choosing it via its assigned number
+-- * randomize options
+-- * make interface pretty/readable
+-- * more game modes
+-- * more languages
+-- * custom dictionaries?
+
 math.randomseed(os.time())
+
+-- Player score and lose count
+local score = 0
+local lose = 0
+-- Maximum number of wrong guesses
+local max = 3
 
 -- Read and parse the tsv file
 local function readtsv(filename)
@@ -32,4 +48,23 @@ local function readtsv(filename)
 end
 
 d = readtsv('res/en-de.tsv')
-print(d[1].word..' '..d[1].def)
+
+while lose < max do
+	nr = math.random(1,#d)
+	print(d[nr].word)
+	print('options:')
+	print('\t'..d[math.random(1,#d)].def)
+	print('\t'..d[nr].def)
+	print('\t'..d[math.random(1,#d)].def)
+	opt=io.read()
+
+	if opt == d[nr].def then
+		print('Correct!')
+		score = score+1
+	else
+		print('Wrong! '..max-lose..' tries left.')
+		lose = lose+1
+	end
+end
+
+print('\nYou lost!\nscore: '..score)
