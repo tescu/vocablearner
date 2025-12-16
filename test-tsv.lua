@@ -26,4 +26,5 @@ local function readtsv(filename)
 	file:close()
 	return fields
 end
-readtsv('res/en-ro.tsv')
+--readtsv('res/en-ro.tsv')
+readtsv(arg[1])

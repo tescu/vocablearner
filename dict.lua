@@ -77,11 +77,7 @@ if #arg < 1 then
 	d = readtsv('res/en-de.tsv')
 else
 	lang = arg[1]
-	if lang == 'ro' or lang == 'de' then
-		d = readtsv('res/en-'..lang..'.tsv')
-	else
-		d = readtsv('res/en-de.tsv')
-	end
+	d = readtsv('res/en-'..lang..'.tsv')
 end
 
 -- Clear screen
@@ -89,7 +85,7 @@ io.write(esc..'0;0H'..esc..'2J')
 io.flush()
 
 -- Game loop
-while lose < max do
+while lose <= max do
 	-- Grab a random word
 	if arg[1] == 'r' or arg[2] == 'r' then
 		ans, word, position = getword(d)
