@@ -17,5 +17,8 @@ Prototype screenshot:
 
 # Dictionaries
 
-* The german-english and english-german dictionaries are taken from Project
-  Gutenberg [Mr. Honey's Dictionary](https://www.gutenberg.org/ebooks/3212).
+* The English-German dictionary was interpreted from the Project Gutenberg
+  book ["Mr. Honey's Dictionary"](https://www.gutenberg.org/ebooks/3212).
+
+* The English-Greek dictionary was manually interpreted from the
+  [FreeDict](https://freedict.org/) database.
