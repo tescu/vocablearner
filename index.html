@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Vocablearner</title>
+	<style>
+		body {
+			font-family: serif;
+			text-align: center;
+			margin: 50px;
+		}
+		#gword {
+			margin-top: 20px;
+			font-size: 24px;
+			font-weight: bold;
+			color: #00bb00;
+		}
+		#result {
+			margin-top: 20px;
+			font-size: 24px;
+			font-weight: bold;
+		}
+		button {
+			padding: 10px 20px;
+			font-size: 18px;
+			margin: 10px;
+		}
+	</style>
+</head>
+<body>
+
+<h1>Vocablearner</h1>
+
+<label for="lang">Language:</label>
+<select id="lang">
+	<option value="res/en-de.tsv">English - German</option>
+	<option value="res/en-el.tsv">English - Greek</option>
+	<option value="res/en-hu.tsv">English - Hungarian</option>
+	<option value="res/en-ko.tsv">English - Korean</option>
+	<option value="res/en-ro.tsv">English - Romanian</option>
+</select>
+
+<!-- interface -->
+<button id="load">Load</button>
+<button id="startgame" disabled>Start</button>
+
+<div id="gword"></div>
+<div id="option1"></div>
+<div id="option2"></div>
+<div id="option3"></div>
+<div id="option4"></div>
+
+<script>
+	let words = [];
+
+	// load the TSV dictionary
+	async function loadTSV(url) {
+		const response = await fetch(url);
+		const text = await response.text();
+	// Split file by line
+		const lines = text.trim().split('\n');
+	// Clear previous words
+		words = [];
+
+		// parsing
+		lines.forEach(line => {
+		// split by tabs (duh)
+			const [word, def] = line.split('\t');
+			words.push({ word, def});
+		});
+		
+		// Enable the button after loading the file
+		document.getElementById('startgame').disabled = false;
+		document.getElementById('gword').textContent = 'Language ready! Have fun!';
+		document.getElementById('option1').textContent = '';
+		document.getElementById('option2').textContent = '';
+		document.getElementById('option3').textContent = '';
+		document.getElementById('option4').textContent = '';
+	}
+
+	// Game loop
+	function guesser() {
+		if (words.length > 0) {
+			const rnd = Math.floor(Math.random() * words.length);
+			const dict = words[rnd];
+			document.getElementById('gword').textContent = `${dict.word}`;
+			document.getElementById('option1').textContent =  `${dict.def}`;
+		} else {
+			document.getElementById('gword').textContent = 'Choose and load a language first!';
+		}
+	}
+
+	// load a language
+	document.getElementById('load').addEventListener('click', function() {
+		const file = document.getElementById('lang').value;
+		loadTSV(file);
+	});
+
+	// Game start
+	document.getElementById('startgame').addEventListener('click', guesser);
+</script>
+
+</body>
+</html>
+
