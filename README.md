@@ -1,19 +1,25 @@
-# dictgame
+# vocablearner
 
-## PROTOTYPE VERSION
+## PROTOTYPE VERSION -- EXPECT FUTURE CHANGES
 
-`dictgame` is a simple terminal program written in Lua that gives the user
-a random word in a chosen language, and four possible translations.
-The goal is to select the correct translation of the word. Each time the
-user guesses a word right, the score will increase. 
+__vocablearner__ is a simple program that offers a quick way to refresh one's vocabulary in a selection
+of languages. This program is available as a CLI utility, as well as a web version with a few more
+features.
 
-More game modes are planned.
+This tool is not meant to _teach_ you a language, just to aid in vocabulary building and retention.
 
 # Gameplay example
 
-Prototype screenshot:
+### Web version
 
-![demo](./demo.png)
+![webdemo](./etc/webdemo.png)
+
+### Terminal version
+
+![demo](./etc/demo.png)
+
+# License
+Source-code is licensed under the GNU GPLv3. See [LICENSE](./LICENSE) for details.
 
 # Dictionaries
 

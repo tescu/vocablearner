@@ -1,21 +1,14 @@
-BUGS:
-- 'reverse' game mode has question-answer order wrong
-- no real way to 'cancel' or 'quit' game, aside from losing
-
 FEATURES:
-- different scoring methods?
+- (WEB) assure desktop and mobile compatibility
+- (WEB) light and dark themes (via css media flag)
+- (CLI/WEB) 'reverse' game mode; guess English words using target language
+- (CLI/WEB) different scoring methods?
 	There should be some sort of motivational factor that makes the user not
 	want to make mistakes.
 	- (currently) score goes up infinitely; game continues until user gives up
 	- idea: score goes up infinitely; game stops when user makes a mistake N times
 		- grant an extra life every 5-10 words guessed right?
-- export to scoreboard
-- custom dictionaries inside program? 
-- install & uninstall script
-- configuration via environmental vars
-
-GRAPHICS:
-- finish terminal version
-	- maybe some sort of TUI, with simple colors and shapes
-- start working on a graphical version (using Tk?)
-	- if not Tk, what about a web version?
+- (CLI/WEB) export to scoreboard
+- (CLI/WEB) load custom dictionaries inside program? 
+- (CLI) install & uninstall script
+- (CLI) configuration via environmental vars
