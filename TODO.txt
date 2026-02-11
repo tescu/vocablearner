@@ -1,6 +1,6 @@
 FEATURES:
-- (WEB) assure desktop and mobile compatibility
-- (WEB) light and dark themes (via css media flag)
+x (WEB) assure desktop and mobile compatibility
+x (WEB) light and dark themes (via css media flag)
 - (CLI/WEB) 'reverse' game mode; guess English words using target language
 - (CLI/WEB) different scoring methods?
 	There should be some sort of motivational factor that makes the user not

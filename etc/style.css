@@ -1,0 +1,44 @@
+:root {
+	--bg:#FFFFFF;
+	--fg:#000000;
+	--ht:#0000bb;
+}
+@media (prefers-color-scheme: dark) {
+	:root {
+		--bg:#000000;
+		--fg:#FFFFFF;
+		--ht:#fa8a3f;
+	}
+}
+
+body {
+	background-color:var(--bg);
+	color:var(--fg);
+	font-family: serif;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 1000px;
+}
+#gword {
+	margin-top: 20px;
+	font-size: 24px;
+	font-weight: bold;
+	color:var(--ht);
+}
+#message {
+	margin-top: 20px;
+	font-size: 24px;
+	font-weight: bold;
+}
+button {
+	background-color:var(--bg);
+	border: 2px solid var(--fg);
+	color: var(--fg);
+	padding: 10px 20px;
+	font-size: 18px;
+	margin: 10px;
+}
+.hidden {
+	display: none;
+}
