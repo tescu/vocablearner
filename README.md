@@ -35,4 +35,6 @@ Source-code is licensed under the GNU GPLv3. See [LICENSE](./LICENSE) for detail
 
 * Hungarian and Romanian dictionaries manually interpreted from a custom spellcheck library.
 
+* Japanese JLPT word lists from [jisho](https://jisho.org).
+
 * Korean dictionary features common TOPIK I and TOPIK II vocabulary.
